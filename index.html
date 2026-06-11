@@ -19,8 +19,6 @@ html,body{height:100%;overflow:hidden;}
 body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:var(--gray-bg);color:var(--text);}
 .screen{display:none;height:100vh;flex-direction:column;overflow:hidden;}
 .screen.active{display:flex;}
-
-/* HEADER */
 .header{background:var(--white);border-bottom:1px solid var(--gray-border);padding:10px 20px;display:flex;align-items:center;justify-content:space-between;flex-shrink:0;}
 .header-logo{font-size:16px;font-weight:600;color:var(--purple);}
 .header-sub{font-size:12px;color:var(--gray-text);}
@@ -28,8 +26,6 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;backgrou
 .round-dot{width:9px;height:9px;border-radius:50%;background:var(--gray-border);transition:background 0.3s;}
 .round-dot.done{background:var(--teal);}
 .round-dot.active{background:var(--purple);}
-
-/* LANDING */
 .center-screen{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:20px;text-align:center;}
 .center-screen h1{font-size:28px;font-weight:700;margin-bottom:8px;letter-spacing:-0.5px;}
 .center-screen p{font-size:15px;color:var(--gray-text);max-width:340px;margin:0 auto 24px;line-height:1.6;}
@@ -37,8 +33,6 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;backgrou
 .name-input-wrap input{width:100%;padding:12px 16px;font-size:16px;border:1.5px solid var(--gray-border);border-radius:var(--radius-sm);background:var(--white);color:var(--text);outline:none;text-align:center;transition:border-color 0.2s;}
 .name-input-wrap input:focus{border-color:var(--purple-mid);}
 .name-input-wrap input::placeholder{color:#bbb;}
-
-/* BUTTONS */
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;padding:11px 24px;border-radius:var(--radius-sm);font-size:14px;font-weight:500;cursor:pointer;border:none;transition:all 0.15s;}
 .btn-primary{background:var(--purple);color:white;}
 .btn-primary:hover{background:#3C3489;}
@@ -53,7 +47,17 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;backgrou
 .btn-amber:hover{background:#854F0B;}
 .mt-12{margin-top:12px;}
 
-/* ROUND SCREEN — split layout */
+/* ROUND TITLE SCREEN */
+.round-title-screen{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:40px 20px;text-align:center;background:var(--white);}
+.round-number-big{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:0.15em;color:var(--purple);margin-bottom:16px;}
+.round-title-big{font-size:48px;font-weight:700;letter-spacing:-1px;color:var(--text);margin-bottom:12px;}
+.round-subtitle{font-size:16px;color:var(--gray-text);max-width:320px;margin:0 auto 36px;line-height:1.6;}
+.round-pip-row{display:flex;gap:8px;justify-content:center;margin-bottom:36px;}
+.round-pip{width:12px;height:12px;border-radius:50%;background:var(--gray-border);}
+.round-pip.active{background:var(--purple);}
+.round-pip.done{background:var(--teal);}
+
+/* ROUND SCREEN */
 .round-body{flex:1;display:flex;overflow:hidden;}
 .facts-panel{width:52%;border-right:1px solid var(--gray-border);display:flex;flex-direction:column;overflow:hidden;}
 .slots-panel{width:48%;display:flex;flex-direction:column;overflow:hidden;}
@@ -62,19 +66,14 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;backgrou
 .panel-title{font-size:15px;font-weight:700;color:var(--text);}
 .panel-desc{font-size:12px;color:var(--gray-text);margin-top:2px;}
 .panel-scroll{flex:1;overflow-y:auto;padding:6px 10px 10px;}
-
 .progress-bar-wrap{height:3px;background:var(--gray-border);flex-shrink:0;}
 .progress-bar-fill{height:3px;background:var(--purple);transition:width 0.3s;}
-
-/* FACT CARDS */
 .fact-card{background:var(--white);border:1.5px solid var(--gray-border);border-radius:var(--radius-sm);padding:9px 12px;font-size:13px;color:var(--text);cursor:grab;display:flex;align-items:flex-start;gap:8px;transition:all 0.15s;user-select:none;line-height:1.45;margin-bottom:6px;}
 .fact-card:hover{border-color:var(--purple-mid);box-shadow:0 2px 6px rgba(83,74,183,0.1);}
 .fact-card.dragging{opacity:0.3;border-style:dashed;}
 .fact-card.assigned{opacity:0.35;cursor:default;background:var(--gray-bg);}
 .fact-card.assigned:hover{border-color:var(--gray-border);box-shadow:none;}
 .grip{color:#ccc;font-size:14px;flex-shrink:0;margin-top:1px;}
-
-/* NAME SLOTS */
 .name-slot{background:var(--white);border:1.5px dashed var(--gray-border);border-radius:var(--radius-sm);padding:7px 10px;min-height:50px;transition:all 0.15s;margin-bottom:5px;}
 .name-slot.drag-over{border-color:var(--purple);background:var(--purple-light);}
 .name-slot.filled{border-style:solid;border-color:var(--teal);background:var(--teal-light);}
@@ -85,16 +84,10 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;backgrou
 .slot-filled-row{display:flex;align-items:flex-start;justify-content:space-between;gap:4px;}
 .remove-btn{background:none;border:none;cursor:pointer;color:#bbb;font-size:14px;padding:0;line-height:1;flex-shrink:0;}
 .remove-btn:hover{color:var(--coral);}
-
-/* ROUND FOOTER */
 .round-footer{background:var(--white);border-top:1px solid var(--gray-border);padding:10px 16px;display:flex;align-items:center;justify-content:space-between;flex-shrink:0;}
 .assign-count{font-size:13px;color:var(--gray-text);}
 .assign-count span{font-weight:600;color:var(--purple);}
-
-/* ROUND TAG */
 .round-tag{display:inline-block;background:var(--purple-light);color:var(--purple);font-size:11px;font-weight:600;padding:3px 9px;border-radius:20px;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:4px;}
-
-/* WAITING */
 .waiting-center{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:40px 20px;}
 .waiting-icon{font-size:48px;margin-bottom:16px;}
 .waiting-center h2{font-size:22px;font-weight:700;margin-bottom:6px;}
@@ -104,8 +97,6 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;backgrou
 .submission-count .label{font-size:12px;color:var(--gray-text);margin-top:2px;}
 .pulse{animation:pulse 2s ease-in-out infinite;}
 @keyframes pulse{0%,100%{opacity:1;}50%{opacity:0.6;}}
-
-/* MC */
 .mc-header{background:var(--purple);color:white;padding:16px 20px;flex-shrink:0;}
 .mc-header h2{font-size:18px;font-weight:700;}
 .mc-header p{font-size:12px;opacity:0.8;margin-top:2px;}
@@ -114,13 +105,10 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;backgrou
 .nav-tabs{display:flex;gap:4px;background:var(--gray-bg);border-radius:var(--radius-sm);padding:3px;margin-bottom:16px;}
 .nav-tab{flex:1;padding:7px;font-size:12px;font-weight:500;border:none;border-radius:6px;cursor:pointer;background:transparent;color:var(--gray-text);transition:all 0.15s;}
 .nav-tab.active{background:var(--white);color:var(--text);box-shadow:0 1px 3px rgba(0,0,0,0.08);}
-
 .submissions-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:16px;}
 .submission-chip{background:var(--white);border:1.5px solid var(--gray-border);border-radius:var(--radius-sm);padding:8px;text-align:center;font-size:12px;font-weight:500;}
 .submission-chip.submitted{border-color:var(--teal);background:var(--teal-light);color:var(--teal);}
 .submission-chip .chip-icon{font-size:14px;margin-bottom:3px;}
-
-/* REVEAL */
 .reveal-stage{text-align:center;margin-bottom:16px;}
 .reveal-stage h3{font-size:22px;font-weight:700;letter-spacing:-0.3px;margin-bottom:4px;}
 .reveal-person-tag{display:inline-block;background:var(--purple-light);color:var(--purple);font-size:12px;font-weight:600;padding:4px 12px;border-radius:20px;margin-bottom:8px;}
@@ -128,15 +116,16 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;backgrou
 .face-card{background:var(--white);border:1.5px solid var(--gray-border);border-radius:var(--radius);overflow:hidden;}
 .face-card-name{font-size:10px;font-weight:700;text-align:center;padding:5px 3px;color:var(--gray-text);text-transform:uppercase;letter-spacing:0.05em;border-bottom:1px solid var(--gray-border);}
 .face-strip-wrap{position:relative;}
-.face-strip-wrap img{width:100%;display:block;object-fit:cover;} .face-strip-wrap.s0 img{aspect-ratio:8/3;} .face-strip-wrap.s1 img{aspect-ratio:4/1;} .face-strip-wrap.s2 img{aspect-ratio:8/3;}
+.face-strip-wrap img{width:100%;display:block;object-fit:cover;}
+.face-strip-wrap.s0 img{aspect-ratio:8/3;}
+.face-strip-wrap.s1 img{aspect-ratio:4/1;}
+.face-strip-wrap.s2 img{aspect-ratio:8/3;}
 .strip-badge{position:absolute;top:2px;right:2px;font-size:10px;font-weight:700;padding:1px 4px;border-radius:3px;}
 .strip-badge.correct{background:var(--teal);color:white;}
 .strip-badge.wrong{background:var(--coral);color:white;}
 .got-right-banner{border-radius:var(--radius-sm);padding:10px 14px;margin-bottom:12px;font-size:13px;}
 .got-right-banner.good{background:var(--teal-light);border:1.5px solid var(--teal);color:#0F6E56;}
 .got-right-banner.bad{background:var(--coral-light);border:1.5px solid #F0997B;color:var(--coral);}
-
-/* LEADERBOARD */
 .leaderboard-list{display:flex;flex-direction:column;gap:6px;margin-bottom:16px;}
 .lb-row{background:var(--white);border:1.5px solid var(--gray-border);border-radius:var(--radius-sm);padding:10px 14px;display:flex;align-items:center;gap:10px;}
 .lb-row.gold{border-color:#EF9F27;background:var(--amber-light);}
@@ -149,8 +138,6 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;backgrou
 .lb-persons span{color:var(--teal);font-weight:600;}
 .perfect-badge{display:inline-block;background:var(--amber-light);color:var(--amber);font-size:10px;font-weight:700;padding:1px 7px;border-radius:20px;margin-left:6px;}
 .test-badge{display:inline-block;background:#FAEEDA;color:#BA7517;font-size:10px;font-weight:700;padding:1px 7px;border-radius:20px;margin-left:6px;}
-
-/* ADMIN */
 .admin-section{background:var(--white);border:1.5px solid var(--gray-border);border-radius:var(--radius);padding:16px;margin-bottom:12px;}
 .admin-section h3{font-size:14px;font-weight:700;margin-bottom:12px;}
 .admin-person-row{display:flex;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid var(--gray-border);}
@@ -162,11 +149,6 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;backgrou
 .admin-person-facts{font-size:11px;color:var(--gray-text);line-height:1.4;}
 .admin-edit-btn{background:var(--purple-light);color:var(--purple);border:none;border-radius:6px;padding:5px 10px;font-size:12px;font-weight:500;cursor:pointer;}
 .admin-edit-btn:hover{background:#CECBF6;}
-.danger-zone{background:var(--coral-light);border:1.5px solid #F0997B;border-radius:var(--radius);padding:16px;}
-.danger-zone h3{font-size:14px;font-weight:700;color:var(--coral);margin-bottom:6px;}
-.danger-zone p{font-size:12px;color:var(--gray-text);margin-bottom:12px;}
-
-/* MODAL */
 .edit-modal-bg{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.5);z-index:100;align-items:center;justify-content:center;padding:20px;}
 .edit-modal-bg.open{display:flex;}
 .edit-modal{background:var(--white);border-radius:var(--radius);padding:20px;width:100%;max-width:440px;max-height:88vh;overflow-y:auto;}
@@ -179,18 +161,29 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;backgrou
 .modal-footer{display:flex;gap:8px;justify-content:flex-end;margin-top:16px;}
 .photo-preview{display:flex;align-items:center;gap:10px;margin-top:6px;}
 .photo-preview img{width:52px;height:52px;object-fit:cover;border-radius:6px;border:1.5px solid var(--gray-border);}
-
-/* TEST MODE BANNER */
+.danger-zone{background:var(--coral-light);border:1.5px solid #F0997B;border-radius:var(--radius);padding:16px;}
+.danger-zone h3{font-size:14px;font-weight:700;color:var(--coral);margin-bottom:6px;}
+.danger-zone p{font-size:12px;color:var(--gray-text);margin-bottom:12px;}
 .test-banner{background:var(--amber-light);border-bottom:2px solid var(--amber);padding:6px 16px;font-size:12px;font-weight:600;color:var(--amber);text-align:center;flex-shrink:0;}
-
-/* ALERT */
 .alert-toast{display:none;position:fixed;top:16px;left:50%;transform:translateX(-50%);z-index:200;min-width:240px;padding:10px 16px;border-radius:var(--radius-sm);font-size:13px;text-align:center;}
 .alert-success{background:var(--teal-light);color:#0F6E56;border:1.5px solid var(--teal);}
 .alert-error{background:var(--coral-light);color:var(--coral);border:1.5px solid #F0997B;}
 
+/* WINNER SCREEN */
+.winner-screen{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:40px 20px;position:relative;overflow:hidden;}
+.winner-crown{font-size:64px;margin-bottom:16px;animation:bounceIn 0.6s ease;}
+.winner-label{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:0.15em;color:var(--amber);margin-bottom:8px;}
+.winner-name{font-size:52px;font-weight:700;letter-spacing:-1px;color:var(--text);margin-bottom:8px;animation:bounceIn 0.6s ease 0.1s both;}
+.winner-score{font-size:18px;color:var(--gray-text);margin-bottom:32px;}
+.winner-score strong{color:var(--purple);font-weight:700;}
+.confetti-piece{position:absolute;width:10px;height:10px;border-radius:2px;animation:confettiFall linear forwards;}
+@keyframes bounceIn{0%{transform:scale(0.3);opacity:0;}60%{transform:scale(1.1);}100%{transform:scale(1);opacity:1;}}
+@keyframes confettiFall{0%{transform:translateY(-20px) rotate(0deg);opacity:1;}100%{transform:translateY(110vh) rotate(720deg);opacity:0;}}
+
 @media(max-width:500px){
   .faces-reveal-grid{grid-template-columns:repeat(2,1fr);}
   .submissions-grid{grid-template-columns:repeat(2,1fr);}
+  .round-title-big{font-size:36px;}
 }
 </style>
 </head>
@@ -209,6 +202,18 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;backgrou
     <div style="margin-top:20px;">
       <button class="btn btn-secondary" onclick="showScreen('screen-mc')" style="font-size:12px;padding:7px 14px;">MC / Admin view</button>
     </div>
+  </div>
+</div>
+
+<!-- ROUND TITLE SCREEN -->
+<div id="screen-round-title" class="screen">
+  <div id="testBannerTitle" class="test-banner" style="display:none;">🧪 Test mode</div>
+  <div class="round-title-screen">
+    <div class="round-number-big" id="titleRoundNumber">Round 1</div>
+    <div class="round-title-big" id="titleRoundName">Round 1</div>
+    <div class="round-subtitle" id="titleRoundDesc">Assign each fact to the person you think said it.</div>
+    <div class="round-pip-row" id="titlePips"></div>
+    <button class="btn btn-primary" style="padding:14px 48px;font-size:16px;" onclick="showScreen('screen-round');renderRound();">Start →</button>
   </div>
 </div>
 
@@ -241,7 +246,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;backgrou
     </div>
   </div>
   <div class="round-footer">
-    <div class="assign-count">Assigned: <span id="assignCount">0</span> / 8</div>
+    <div class="assign-count">Assigned: <span id="assignCount">0</span> / <span id="assignTotal">7</span></div>
     <button class="btn btn-primary" id="nextRoundBtn" onclick="goNextRound()" disabled>Next round →</button>
   </div>
 </div>
@@ -254,9 +259,20 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;backgrou
     <p>Waiting for everyone else&#8230;<br>The MC will kick off the reveal when ready.</p>
     <div class="submission-count pulse">
       <div class="num" id="waitingCount">0</div>
-      <div class="label">of 8 submitted</div>
+      <div class="label">of 7 submitted</div>
     </div>
     <div style="margin-top:16px;font-size:12px;color:#bbb;">Keep an eye on the big screen!</div>
+  </div>
+</div>
+
+<!-- WINNER SCREEN -->
+<div id="screen-winner" class="screen">
+  <div class="winner-screen" id="winnerScreen">
+    <div class="winner-crown">🏆</div>
+    <div class="winner-label">Winner</div>
+    <div class="winner-name" id="winnerName">—</div>
+    <div class="winner-score" id="winnerScore"></div>
+    <button class="btn btn-primary" style="padding:12px 36px;" onclick="showLeaderboard()">See full leaderboard →</button>
   </div>
 </div>
 
@@ -274,22 +290,20 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;backgrou
       <button class="nav-tab" onclick="mcTab('leaderboard')">Leaderboard</button>
       <button class="nav-tab" onclick="mcTab('admin')">Admin</button>
     </div>
-
     <div id="mc-tab-submissions">
       <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;">
         <div>
-          <div style="font-size:20px;font-weight:700;" id="mcSubmitCount">0 / 8 submitted</div>
+          <div style="font-size:20px;font-weight:700;" id="mcSubmitCount">0 / 7 submitted</div>
           <div style="font-size:12px;color:var(--gray-text);">Waiting for everyone to finish</div>
         </div>
         <button class="btn btn-secondary" onclick="loadMCData()" style="font-size:12px;padding:7px 12px;">&#8635; Refresh</button>
       </div>
       <div class="submissions-grid" id="mcSubmissionsGrid"></div>
       <div style="display:flex;gap:8px;margin-top:4px;">
-        <button class="btn btn-primary" id="startRevealBtn" onclick="startReveal(false)" disabled style="flex:1;padding:12px;">Start the reveal &#127917;</button>
-        <button class="btn btn-amber" id="testRevealBtn" onclick="runTestAndReveal()" style="padding:12px 16px;" title="Submit a random test entry and go to reveal">&#x1F9EA; Run test</button>
+        <button class="btn btn-primary" id="startRevealBtn" onclick="startReveal()" disabled style="flex:1;padding:12px;">Start the reveal &#127917;</button>
+        <button class="btn btn-amber" onclick="runTestAndReveal()" style="padding:12px 16px;" title="Submit a random test entry and go to reveal">&#x1F9EA; Run test</button>
       </div>
     </div>
-
     <div id="mc-tab-reveal" style="display:none;">
       <div id="revealContent">
         <div style="text-align:center;padding:32px 20px;color:var(--gray-text);">
@@ -298,7 +312,6 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;backgrou
         </div>
       </div>
     </div>
-
     <div id="mc-tab-leaderboard" style="display:none;">
       <div id="leaderboardContent">
         <div style="text-align:center;padding:32px 20px;color:var(--gray-text);">
@@ -307,7 +320,6 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;backgrou
         </div>
       </div>
     </div>
-
     <div id="mc-tab-admin" style="display:none;">
       <div class="admin-section">
         <h3>Edit people, facts &amp; photos</h3>
@@ -322,6 +334,17 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;backgrou
         </div>
       </div>
     </div>
+  </div>
+</div>
+
+<!-- LEADERBOARD SCREEN -->
+<div id="screen-leaderboard" class="screen">
+  <div class="header">
+    <div class="header-logo">Who's Who?</div>
+    <button class="btn btn-secondary" onclick="mcTab('leaderboard');showScreen('screen-mc');" style="font-size:12px;padding:6px 12px;">MC view</button>
+  </div>
+  <div style="flex:1;overflow-y:auto;padding:20px;">
+    <div id="leaderboardFullContent"></div>
   </div>
 </div>
 
@@ -366,7 +389,7 @@ async function sb(path, opts) {
   return t ? JSON.parse(t) : null;
 }
 
-let PEOPLE = [
+const PEOPLE = [
   {id:"paulo",name:"Paulo",facts:["I broke my left arm","I met Joe Montana","I have 2 middle names"]},
   {id:"riana",name:"Riana",facts:["I won a \"Junior Joke Off\" competition on a radio show three times in middle school","I'm the first person in my family to be born in the U.S.","I've been to Europe 4 times in the last year"]},
   {id:"chris",name:"Chris",facts:["I hate eating around older people if they visibly look older than 65","I am expecting my first little one in 2027","I have 2 first names"]},
@@ -376,6 +399,9 @@ let PEOPLE = [
   {id:"jeremy",name:"Jeremy",facts:["I have a black belt in tae kwon do","I played piano until 8th grade and stopped because I thought it wasn't cool. Apparently it is.","I am fascinated by ghost hunting"]},
   {id:"krissi",name:"Krissi",facts:["I did a performance at a college basketball half-time show","Cotton candy freaks me out - the texture, the concept, everything","I had a cat named \"BHLB\" which stood for big head little body"]}
 ];
+
+const NON_SUBMITTER = "krissi";
+const SUBMITTER_COUNT = 7;
 
 const PHOTO_STRIPS = {
   "kristina": [
@@ -421,13 +447,13 @@ const PHOTO_STRIPS = {
 };
 
 const ROUND_LABELS = ["Round 1","Round 2","Round 3"];
-const ROUND_TITLES = ["Round 1","Round 2","Round 3"];
-const ROUND_DESCS  = ["Assign each fact to the person you think said it.","More facts — use what you learned in round 1!","Final round — commit to your answers."];
+const ROUND_DESCS = ["Assign each fact to the person you think said it.","More facts — use what you learned in round 1!","Final round — commit to your answers."];
 
 let playerName = "", playerId = null, isTestMode = false;
 let currentRound = 0, assignments = [{},{},{}], shuffledFacts = [[],[],[]];
 let draggedFact = null, editingPersonId = null, editPhotoBase64 = null;
 let revealPersonIndex = 0, allSubmissions = [];
+let activePeople = []; // people excluding the current player
 
 function shuffle(a) {
   a = [...a];
@@ -462,15 +488,36 @@ async function startGame(testMode) {
   playerName = name;
   document.getElementById('headerPlayerName').textContent = name;
   document.getElementById('testBanner').style.display = isTestMode ? 'block' : 'none';
+  document.getElementById('testBannerTitle').style.display = isTestMode ? 'block' : 'none';
+
   try {
     const res = await sb('players', {method:'POST', body:{name: playerName, is_test: isTestMode}, prefer:'return=representation'});
     playerId = res[0].id;
   } catch(e) { showAlert('Could not connect. Check your internet.', 'error'); return; }
+
+  // Build active people — exclude the current player by name match
+  const lowerName = name.toLowerCase();
+  activePeople = PEOPLE.filter(p => p.name.toLowerCase() !== lowerName);
+  const total = activePeople.length;
+  document.getElementById('assignTotal').textContent = total;
+
   for (let r = 0; r < 3; r++) {
-    shuffledFacts[r] = shuffle(PEOPLE.map(p => ({owner:p.id, text:p.facts[r], personName:p.name})));
+    shuffledFacts[r] = shuffle(activePeople.map(p => ({owner:p.id, text:p.facts[r], personName:p.name})));
   }
   currentRound = 0; assignments = [{},{},{}];
-  renderRound(); showScreen('screen-round');
+  showRoundTitle(0);
+}
+
+function showRoundTitle(r) {
+  currentRound = r;
+  document.getElementById('titleRoundNumber').textContent = 'Round ' + (r+1) + ' of 3';
+  document.getElementById('titleRoundName').textContent = ROUND_LABELS[r];
+  document.getElementById('titleRoundDesc').textContent = ROUND_DESCS[r];
+  // pips
+  document.getElementById('titlePips').innerHTML = [0,1,2].map(i =>
+    '<div class="round-pip ' + (i < r ? 'done' : i === r ? 'active' : '') + '"></div>'
+  ).join('');
+  showScreen('screen-round-title');
 }
 
 function renderRoundDots() {
@@ -482,14 +529,15 @@ function renderRoundDots() {
 function renderRound() {
   renderRoundDots();
   document.getElementById('roundTag').textContent = ROUND_LABELS[currentRound];
-  document.getElementById('roundTitle').textContent = ROUND_TITLES[currentRound];
   document.getElementById('roundDesc').textContent = ROUND_DESCS[currentRound];
   const assigned = assignments[currentRound];
   const assignedOwners = new Set(Object.values(assigned).map(f => f.owner));
   const count = Object.keys(assigned).length;
+  const total = activePeople.length;
   document.getElementById('assignCount').textContent = count;
-  document.getElementById('progressBar').style.width = (count/8*100) + '%';
-  document.getElementById('nextRoundBtn').disabled = count < 8;
+  document.getElementById('assignTotal').textContent = total;
+  document.getElementById('progressBar').style.width = (count/total*100) + '%';
+  document.getElementById('nextRoundBtn').disabled = count < total;
   document.getElementById('nextRoundBtn').textContent = currentRound < 2 ? 'Next round \u2192' : 'Submit answers \u2713';
 
   document.getElementById('factPool').innerHTML = shuffledFacts[currentRound].map((f,i) => {
@@ -497,7 +545,7 @@ function renderRound() {
     return '<div class="fact-card' + (isA?' assigned':'') + '" draggable="' + (!isA) + '" data-idx="' + i + '" data-owner="' + f.owner + '" data-text="' + encodeURIComponent(f.text) + '"><span class="grip">&#8942;</span><span>' + f.text + '</span></div>';
   }).join('');
 
-  document.getElementById('nameSlots').innerHTML = PEOPLE.map(p => {
+  document.getElementById('nameSlots').innerHTML = activePeople.map(p => {
     const match = assigned[p.id];
     if (match) {
       return '<div class="name-slot filled slot-filled" data-name="' + p.id + '"><div class="slot-name">' + p.name + '</div><div class="slot-filled-row"><div class="slot-fact-text">' + match.text + '</div><button class="remove-btn" onclick="removeAssignment(\'' + p.id + '\')">&#10005;</button></div></div>';
@@ -533,7 +581,7 @@ function attachDragEvents() {
 function removeAssignment(pid) { delete assignments[currentRound][pid]; renderRound(); }
 
 async function goNextRound() {
-  if (currentRound < 2) { currentRound++; renderRound(); }
+  if (currentRound < 2) { showRoundTitle(currentRound + 1); }
   else { await submitAnswers(); }
 }
 
@@ -574,13 +622,14 @@ async function loadMCData() {
     const players = await sb('players?select=id,name,is_test');
     const realPlayers = players.filter(p => !p.is_test);
     const submittedNames = new Set(realPlayers.map(p => p.name.toLowerCase()));
-    document.getElementById('mcSubmitCount').textContent = realPlayers.length + ' / 8 submitted';
-    document.getElementById('mcSubmissionsGrid').innerHTML = PEOPLE.map(p => {
+    document.getElementById('mcSubmitCount').textContent = realPlayers.length + ' / ' + SUBMITTER_COUNT + ' submitted';
+    const submitters = PEOPLE.filter(p => p.id !== NON_SUBMITTER);
+    document.getElementById('mcSubmissionsGrid').innerHTML = submitters.map(p => {
       const submitted = submittedNames.has(p.name.toLowerCase());
       return '<div class="submission-chip' + (submitted?' submitted':'') + '"><div class="chip-icon">' + (submitted?'&#10003;':'&#8943;') + '</div>' + p.name + '</div>';
     }).join('');
-    document.getElementById('startRevealBtn').disabled = realPlayers.length < 8;
-    if (realPlayers.length >= 8) {
+    document.getElementById('startRevealBtn').disabled = realPlayers.length < SUBMITTER_COUNT;
+    if (realPlayers.length >= SUBMITTER_COUNT) {
       allSubmissions = await sb('answers?select=player_id,round,assigned_to,fact_owner');
     }
   } catch(e) { showAlert('Error loading data', 'error'); }
@@ -589,10 +638,8 @@ async function loadMCData() {
 async function runTestAndReveal() {
   showAlert('Submitting test entry...', 'success');
   try {
-    // Create test player
     const res = await sb('players', {method:'POST', body:{name:'Test User', is_test:true}, prefer:'return=representation'});
     const testPlayerId = res[0].id;
-    // Submit random answers
     const rows = [];
     for (let r = 0; r < 3; r++) {
       const shuffled = shuffle(PEOPLE.map(p => p.id));
@@ -601,13 +648,12 @@ async function runTestAndReveal() {
       });
     }
     await sb('answers', {method:'POST', body:rows, prefer:'return=minimal'});
-    // Load all data and go to reveal
     allSubmissions = await sb('answers?select=player_id,round,assigned_to,fact_owner');
     window._mcPlayers = await sb('players?select=id,name,is_test');
     revealPersonIndex = 0;
     mcTab('reveal');
     renderRevealPerson();
-    showAlert('Test submitted! Showing reveal with test data.', 'success');
+    showAlert('Test submitted!', 'success');
   } catch(e) { showAlert('Error running test: ' + e.message, 'error'); }
 }
 
@@ -622,7 +668,7 @@ async function startReveal() {
 
 function renderRevealPerson() {
   const person = PEOPLE[revealPersonIndex];
-  const players = (window._mcPlayers || []);
+  const players = window._mcPlayers || [];
   const content = document.getElementById('revealContent');
 
   let playerResults = players.map(player => {
@@ -651,22 +697,20 @@ function renderRevealPerson() {
       const owner = strips[r] || person.id;
       const photoData = PHOTO_STRIPS[owner];
       const imgSrc = photoData ? photoData[r] : null;
-      const pos = r === 0 ? 'top' : r === 1 ? 'center' : 'bottom';
-      html += '<div class="face-strip-wrap s" + r + "">' + (imgSrc ? '<img src="' + imgSrc + '" style="width:100%;display:block;object-fit:cover;" />' : '<div style="width:100%;aspect-ratio:" + ["8/3","4/1","8/3"][r] + ";background:var(--gray-bg);"></div>') + '<span class="strip-badge ' + (correct[r]?'correct':'wrong') + '">' + (correct[r]?'&#10003;':'&#10007;') + '</span></div>';
+      html += '<div class="face-strip-wrap s' + r + '">' + (imgSrc ? '<img src="' + imgSrc + '" style="width:100%;display:block;object-fit:cover;" />' : '<div style="width:100%;aspect-ratio:' + ['8/3','4/1','8/3'][r] + ';background:var(--gray-bg);"></div>') + '<span class="strip-badge ' + (correct[r]?'correct':'wrong') + '">' + (correct[r]?'&#10003;':'&#10007;') + '</span></div>';
     }
     html += '</div>';
   });
   html += '</div>';
 
   const isLast = revealPersonIndex >= PEOPLE.length - 1;
-  html += '<div style="display:flex;gap:8px;">' + (revealPersonIndex > 0 ? '<button class="btn btn-secondary" onclick="revealPersonIndex--;renderRevealPerson()">&#8592; Prev</button>' : '') + (!isLast ? '<button class="btn btn-primary" style="flex:1;" onclick="revealPersonIndex++;renderRevealPerson()">Next person &#8594;</button>' : '<button class="btn btn-teal" style="flex:1;" onclick="showLeaderboard()">Leaderboard &#127942;</button>') + '</div>';
+  html += '<div style="display:flex;gap:8px;">' + (revealPersonIndex > 0 ? '<button class="btn btn-secondary" onclick="revealPersonIndex--;renderRevealPerson()">&#8592; Prev</button>' : '') + (!isLast ? '<button class="btn btn-primary" style="flex:1;" onclick="revealPersonIndex++;renderRevealPerson()">Next person &#8594;</button>' : '<button class="btn btn-teal" style="flex:1;" onclick="triggerWinner()">See the winner &#127942;</button>') + '</div>';
 
   content.innerHTML = html;
 }
 
-function showLeaderboard() {
-  mcTab('leaderboard');
-  const players = window._mcPlayers || [];
+function triggerWinner() {
+  const players = (window._mcPlayers || []).filter(p => !p.is_test);
   const scores = players.map(player => {
     let factCount = 0, personCount = 0;
     PEOPLE.forEach(person => {
@@ -677,22 +721,56 @@ function showLeaderboard() {
       }
       if (allCorrect) personCount++;
     });
-    return {name: player.name, factCount, personCount, isTest: player.is_test};
+    return {name: player.name, factCount, personCount};
   });
   scores.sort((a,b) => b.factCount - a.factCount || b.personCount - a.personCount);
+  window._scores = scores;
+
+  const winner = scores[0];
+  document.getElementById('winnerName').textContent = winner.name;
+  document.getElementById('winnerScore').innerHTML = '<strong>' + winner.factCount + '</strong> facts correct &nbsp;·&nbsp; <strong>' + winner.personCount + '</strong> perfect matches';
+  showScreen('screen-winner');
+  launchConfetti();
+}
+
+function launchConfetti() {
+  const colors = ['#534AB7','#1D9E75','#D85A30','#BA7517','#7F77DD','#EF9F27','#5DCAA5'];
+  const container = document.getElementById('winnerScreen');
+  for (let i = 0; i < 80; i++) {
+    const piece = document.createElement('div');
+    piece.className = 'confetti-piece';
+    piece.style.cssText = [
+      'left:' + Math.random()*100 + '%',
+      'top:-20px',
+      'background:' + colors[Math.floor(Math.random()*colors.length)],
+      'width:' + (6+Math.random()*8) + 'px',
+      'height:' + (6+Math.random()*8) + 'px',
+      'animation-duration:' + (2+Math.random()*2) + 's',
+      'animation-delay:' + (Math.random()*1.5) + 's',
+      'border-radius:' + (Math.random() > 0.5 ? '50%' : '2px')
+    ].join(';');
+    container.appendChild(piece);
+    setTimeout(() => piece.remove(), 4000);
+  }
+}
+
+function showLeaderboard() {
+  const scores = window._scores || [];
   const medals = ['&#129351;','&#129352;','&#129353;'];
-  let html = '<div style="margin-bottom:12px;"><div style="font-size:20px;font-weight:700;">Final leaderboard &#127942;</div><div style="font-size:12px;color:var(--gray-text);">Facts correct (out of 24) &middot; Perfect person matches (out of 8)</div></div><div class="leaderboard-list">';
+  let html = '<div style="margin-bottom:16px;"><div style="font-size:20px;font-weight:700;">Final leaderboard &#127942;</div><div style="font-size:12px;color:var(--gray-text);">Facts correct out of ' + (PEOPLE.length * 3) + ' &middot; Perfect person matches out of ' + PEOPLE.length + '</div></div><div class="leaderboard-list">';
   scores.forEach((s,i) => {
-    html += '<div class="lb-row' + (i===0&&!s.isTest?' gold':'') + '"><div class="lb-rank">' + (s.isTest ? '&#x1F9EA;' : medals[i] || (i+1)) + '</div><div class="lb-name">' + s.name + (s.factCount===24&&!s.isTest?'<span class="perfect-badge">Perfect!</span>':'') + (s.isTest?'<span class="test-badge">Test</span>':'') + '</div><div class="lb-scores"><div class="lb-facts">' + s.factCount + '/24</div><div class="lb-persons">Persons: <span>' + s.personCount + '/8</span></div></div></div>';
+    html += '<div class="lb-row' + (i===0?' gold':'') + '"><div class="lb-rank">' + (medals[i] || (i+1)) + '</div><div class="lb-name">' + s.name + (s.factCount === PEOPLE.length*3 ? '<span class="perfect-badge">Perfect!</span>' : '') + '</div><div class="lb-scores"><div class="lb-facts">' + s.factCount + '/' + (PEOPLE.length*3) + '</div><div class="lb-persons">Persons: <span>' + s.personCount + '/' + PEOPLE.length + '</span></div></div></div>';
   });
   html += '</div>';
-  document.getElementById('leaderboardContent').innerHTML = html;
+  document.getElementById('leaderboardFullContent').innerHTML = html;
+  showScreen('screen-leaderboard');
 }
 
 function renderAdmin() {
   document.getElementById('adminPersonList').innerHTML = PEOPLE.map(p => {
     const photoSrc = PHOTO_STRIPS[p.id] ? PHOTO_STRIPS[p.id][1] : null;
-    return '<div class="admin-person-row"><div class="admin-avatar">' + (photoSrc ? '<img src="' + photoSrc + '" alt="' + p.name + '" />' : '<div style="width:100%;height:100%;background:var(--purple-light);display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--purple);font-size:13px;">' + p.name[0] + '</div>') + '</div><div class="admin-person-info"><div class="admin-person-name">' + p.name + '</div><div class="admin-person-facts">' + p.facts.map((f,i) => (i+1) + '. ' + f).join('<br>') + '</div></div><button class="admin-edit-btn" onclick="openEditModal(\'' + p.id + '\')">Edit</button></div>';
+    const isNonSubmitter = p.id === NON_SUBMITTER;
+    return '<div class="admin-person-row"><div class="admin-avatar">' + (photoSrc ? '<img src="' + photoSrc + '" alt="' + p.name + '" />' : '<div style="width:100%;height:100%;background:var(--purple-light);display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--purple);font-size:13px;">' + p.name[0] + '</div>') + '</div><div class="admin-person-info"><div class="admin-person-name">' + p.name + (isNonSubmitter ? ' <span style="font-size:10px;color:var(--amber);background:var(--amber-light);padding:1px 6px;border-radius:10px;">MC</span>' : '') + '</div><div class="admin-person-facts">' + p.facts.map((f,i) => (i+1) + '. ' + f).join('<br>') + '</div></div><button class="admin-edit-btn" onclick="openEditModal(\'' + p.id + '\')">Edit</button></div>';
   }).join('');
 }
 
@@ -709,7 +787,7 @@ function openEditModal(pid) {
   document.getElementById('editModal').classList.add('open');
 }
 
-function closeEditModal() { document.getElementById('editModal').classList.remove('open'); editingPersonId = null; editPhotoBase64 = null; }
+function closeEditModal() { document.getElementById('editModal').classList.remove('open'); }
 
 function previewEditPhoto() {
   const file = document.getElementById('editPhoto').files[0];
@@ -735,12 +813,15 @@ function saveEditModal() {
       const size = Math.min(img.width, img.height);
       const sx = (img.width - size) / 2;
       const newStrips = [];
+      const heights = [Math.round(size*3/8), Math.round(size*2/8), size - Math.round(size*3/8) - Math.round(size*2/8)];
+      let y = 0;
       for (let r = 0; r < 3; r++) {
         const canvas = document.createElement('canvas');
-        canvas.width = 400; canvas.height = 133;
+        canvas.width = 600; canvas.height = heights[r];
         const ctx = canvas.getContext('2d');
-        ctx.drawImage(img, sx, (size/3)*r, size, size/3, 0, 0, 400, 133);
-        newStrips.push(canvas.toDataURL('image/jpeg', 0.85));
+        ctx.drawImage(img, sx, y, size, heights[r] * (size/600), 0, 0, 600, heights[r]);
+        newStrips.push(canvas.toDataURL('image/jpeg', 0.88));
+        y += heights[r] * (size/600);
       }
       PHOTO_STRIPS[editingPersonId] = newStrips;
       closeEditModal(); renderAdmin(); showAlert(p.name + ' updated!');
@@ -750,27 +831,25 @@ function saveEditModal() {
 }
 
 async function resetGame(testOnly) {
-  const msg = testOnly ? 'Delete all test submissions?' : 'Delete ALL submissions? This cannot be undone.';
-  if (!confirm(msg)) return;
+  if (!confirm(testOnly ? 'Delete all test submissions?' : 'Delete ALL submissions? Cannot be undone.')) return;
   try {
     if (testOnly) {
       const testPlayers = await sb('players?is_test=eq.true&select=id');
       if (testPlayers && testPlayers.length > 0) {
-        const ids = testPlayers.map(p => p.id);
-        for (const id of ids) {
-          await sb('answers?player_id=eq.' + id, {method:'DELETE', prefer:'return=minimal'});
-          await sb('players?id=eq.' + id, {method:'DELETE', prefer:'return=minimal'});
+        for (const p of testPlayers) {
+          await sb('answers?player_id=eq.' + p.id, {method:'DELETE', prefer:'return=minimal'});
+          await sb('players?id=eq.' + p.id, {method:'DELETE', prefer:'return=minimal'});
         }
       }
       showAlert('Test submissions cleared!');
     } else {
       await sb('answers?id=neq.00000000-0000-0000-0000-000000000000', {method:'DELETE', prefer:'return=minimal'});
       await sb('players?id=neq.00000000-0000-0000-0000-000000000000', {method:'DELETE', prefer:'return=minimal'});
-      showAlert('Game reset! Ready for a new session.');
+      showAlert('Game reset!');
     }
     allSubmissions = []; window._mcPlayers = [];
     loadMCData();
-  } catch(e) { showAlert('Error resetting: ' + e.message, 'error'); }
+  } catch(e) { showAlert('Error: ' + e.message, 'error'); }
 }
 </script>
 </body>
